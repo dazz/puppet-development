@@ -1,17 +1,12 @@
-# Class: puppet-development
-#
-# This module manages puppet-development
-#
-# Parameters:
-#
-# Actions:
-#
-# Requires:
-#
-# Sample Usage:
-#
-# [Remember: No empty lines between comments and class definition]
-class puppet-development {
 
+class development {
 
+  # install my .bash_aliases
+  include development::bash_aliases
+  
+  package{ "install_midnightcommander":
+    ensure => "installed",
+    require => Package["mc"],
+  }
+  
 }
